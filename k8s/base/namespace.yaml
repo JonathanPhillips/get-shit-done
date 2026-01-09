@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: focus-agent
+  labels:
+    app: focus-agent
+    environment: production

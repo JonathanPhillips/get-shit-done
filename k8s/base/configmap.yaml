@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: focus-agent-config
+  namespace: focus-agent
+data:
+  # Environment
+  ENVIRONMENT: "production"
+  DEBUG: "false"
+
+  # API Configuration (JSON array format for list parsing)
+  CORS_ORIGINS: '["http://localhost:3000", "http://192.168.0.18:30100", "http://focus.localhost"]'
+
+  # Database (four slashes for absolute path with aiosqlite)
+  DATABASE_URL: "sqlite+aiosqlite:////app/data/focus_agent.db"
+
+  # Redis
+  REDIS_URL: "redis://redis-service:6379"
+
+  # Obsidian
+  OBSIDIAN_VAULT_PATH: "/obsidian-vault"
+  OBSIDIAN_SYNC_ENABLED: "false"
+
+  # Pomodoro Defaults
+  POMODORO_WORK_DURATION: "25"
+  POMODORO_SHORT_BREAK: "5"
+  POMODORO_LONG_BREAK: "15"
+  POMODORO_SESSIONS_UNTIL_LONG_BREAK: "4"

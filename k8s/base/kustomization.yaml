@@ -1,0 +1,16 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: focus-agent
+
+resources:
+  - namespace.yaml
+  - configmap.yaml
+  - pvc.yaml
+  - redis.yaml
+  - backend.yaml
+  - frontend.yaml
+  - ingress.yaml
+
+# Note: Secrets should be created manually or via sealed-secrets
+# Do not include secrets-template.yaml in production
