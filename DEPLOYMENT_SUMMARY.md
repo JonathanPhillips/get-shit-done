@@ -202,14 +202,25 @@ focus_agent/
 6297545 (HEAD -> main) Phase 1: Complete Focus Agent MVP with Testing Infrastructure
 ```
 
+## What to Work On Next
+
+See **NEXT_TASKS.md** for detailed prioritized task list.
+
+**Quick Summary**:
+1. **Fix Task Manager E2E Tests** (1-2 hrs, Low priority)
+2. **Validate Integration Tests** (30 min, Medium priority)
+3. **Add Missing Backend Tests** (1 hr, Optional)
+4. **Phase 2: GitHub OAuth** (4-6 hrs, Next major feature)
+
 ## Support & Troubleshooting
 
 If you encounter issues on corporate machine:
 
 1. **Check CLAUDE.md** - Comprehensive troubleshooting section
-2. **Check docs/testing.md** - Test-specific troubleshooting
-3. **Verify cluster access**: `kubectl get pods -n focus-agent`
-4. **Check logs**: `kubectl logs -n focus-agent deployment/focus-agent-backend --tail=100`
+2. **Check NEXT_TASKS.md** - Prioritized work items with estimates
+3. **Check docs/testing.md** - Test-specific troubleshooting
+4. **Verify cluster access**: `kubectl get pods -n focus-agent`
+5. **Check logs**: `kubectl logs -n focus-agent deployment/focus-agent-backend --tail=100`
 
 ## Success Criteria
 

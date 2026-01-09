@@ -390,30 +390,66 @@ kubectl exec -it -n focus-agent deployment/focus-agent-backend -- ls -la /app/da
     - Resolved test interference issues from parallel execution
   - **Docker Image Updates**: Backend redeployed to k3s with bug fixes
 
-## Next Steps
+## Next Tasks (Prioritized)
 
-### Phase 1: Foundation (COMPLETE ✅)
-- [x] Create Docker multi-stage builds
-- [x] Implement basic FastAPI backend with health checks
-- [x] Set up React frontend with Tailwind CSS
-- [x] Deploy to k3s cluster
-- [x] Implement Pomodoro timer engine
-- [x] Create task manager with CRUD API
+### Immediate (Continue on Corporate Machine)
 
-### Phase 2: Integrations
-- [ ] GitHub OAuth and activity tracking
-- [ ] Obsidian file watcher and sync
-- [ ] Markdown parser for notes
+**1. Fix Task Manager E2E Tests (Low Priority, ~1-2 hours)**
+- Issue: 8/13 Task Manager E2E tests failing due to component selector mismatches
+- File: `e2e-tests/tests/tasks.spec.ts`
+- Root cause: Tests expect different form field labels/selectors than actual component
+- Impact: Functionality works, just test expectations need adjustment
+- Details in: `docs/testing.md` under "Known Issues"
+
+**2. Run and Validate Integration Tests (Medium Priority, ~30 min)**
+- File: `e2e-tests/tests/integration.spec.ts`
+- Status: 11 tests created but not yet validated
+- Action: Run tests and fix any failures
+
+**3. Add Missing Backend Tests (Optional, ~1 hour)**
+- Current coverage: ~95%
+- Missing: Error edge cases, concurrent session handling
+- Would bring coverage to 100%
+
+### Phase 2: Integrations (Next Major Work)
+
+**Priority Order**:
+1. **GitHub OAuth** (Highest value)
+   - Endpoints: `/api/auth/github/login`, `/api/auth/github/callback`
+   - Store GitHub tokens in database
+   - Fetch user profile and repos
+
+2. **Obsidian File Watcher** (Medium value)
+   - Watch vault directory for changes
+   - Parse markdown for TODO items
+   - Sync tasks bidirectionally
+
+3. **GitHub Activity Tracking** (Nice to have)
+   - Fetch commits, PRs, issues
+   - Display in dashboard
+   - Link to work sessions
 
 ### Phase 3: Claude Intelligence
 - [ ] Claude API integration
-- [ ] Session analyzer
-- [ ] Daily planning prompts
+- [ ] Session analyzer (analyze productivity patterns)
+- [ ] Daily planning prompts (morning routine)
+- [ ] Context-aware focus suggestions
 
 ### Phase 4: Analytics & Polish
-- [ ] Metrics dashboard
+- [ ] Advanced metrics dashboard with charts
 - [ ] WebSocket real-time updates
-- [ ] Advanced features
+- [ ] Mobile responsive improvements
+- [ ] PWA support
+
+### Phase 1: Foundation (COMPLETE ✅)
+- [x] Docker multi-stage builds
+- [x] FastAPI backend with async SQLAlchemy
+- [x] React frontend with TypeScript & Tailwind
+- [x] Deploy to k3s cluster
+- [x] Pomodoro timer with full session lifecycle
+- [x] Task manager with CRUD operations
+- [x] Comprehensive testing infrastructure (48 tests)
+- [x] Production deployment and validation
 
 ## Port Allocations
 
