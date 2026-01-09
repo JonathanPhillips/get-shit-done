@@ -44,7 +44,8 @@ curl http://192.168.0.18:30100/api/pomodoro/sessions?status=active
 ```
 
 **Git Repository**:
-- **Personal Repo**: <your-personal-repo-url>
+- **GitHub Repo**: https://github.com/JonathanPhillips/get-shit-done
+- **Clone URL**: `git clone https://github.com/JonathanPhillips/get-shit-done.git`
 - **Main Branch**: `main`
 - **Current Status**: Phase 1 complete with testing infrastructure
 
@@ -576,7 +577,7 @@ curl http://192.168.0.18:30100
 
 ```bash
 # 1. Clone repository
-git clone <your-repo-url> focus_agent
+git clone https://github.com/JonathanPhillips/get-shit-done.git focus_agent
 cd focus_agent
 
 # 2. Create namespace
@@ -614,7 +615,7 @@ curl http://192.168.0.18:30100/api/health/detailed
 
 ```bash
 # 1. Clone repository
-git clone <your-repo-url> focus_agent
+git clone https://github.com/JonathanPhillips/get-shit-done.git focus_agent
 cd focus_agent
 
 # 2. Verify cluster is running

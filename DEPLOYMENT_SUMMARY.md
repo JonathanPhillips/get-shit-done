@@ -33,19 +33,22 @@
 - **Status**: Contains active session data
 - **Backup**: Consider backing up before major changes
 
-## Next Steps to Push to Personal Repo
+## ✅ Already Pushed to GitHub
+
+**Repository**: https://github.com/JonathanPhillips/get-shit-done
 
 ```bash
-# 1. Add your remote repository
-cd /Users/jon/Documents/code/focus_agent
-git remote add origin <your-personal-repo-url>
-
-# 2. Push to remote
-git push -u origin main
-
-# 3. Verify push
+# Verify remote
 git remote -v
+# Should show:
+# origin  https://github.com/JonathanPhillips/get-shit-done.git (fetch)
+# origin  https://github.com/JonathanPhillips/get-shit-done.git (push)
+
+# Verify push
 git log --oneline
+# Should show:
+# c004e46 (HEAD -> main, origin/main) docs: Add deployment summary for corporate machine setup
+# 6297545 Phase 1: Complete Focus Agent MVP with Testing Infrastructure
 ```
 
 ## Setting Up on Corporate Machine
@@ -61,7 +64,7 @@ git log --oneline
 
 ```bash
 # 1. Clone repository on corporate machine
-git clone <your-personal-repo-url> focus_agent
+git clone https://github.com/JonathanPhillips/get-shit-done.git focus_agent
 cd focus_agent
 
 # 2. Verify cluster access
